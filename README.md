@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+React Hook Form with Zod Validation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de React que implementa un formulario utilizando react-hook-form con validación basada en zod.
 
-Currently, two official plugins are available:
+Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React
 
-## Expanding the ESLint configuration
+TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React Hook Form
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Zod
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Estructura del Proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+/src
+ |-- components
+ |   |-- CustomInput.tsx  # Componente de input reutilizable
+ |   |-- CustomForm.tsx   # Formulario principal con validaciones
+ |
+ |-- models
+ |   |-- form.model.ts    # Definición del esquema de validación con Zod
+ |
+ |-- App.tsx             # Componente principal
+ |-- index.tsx           # Punto de entrada de la aplicación
+ |-- styles
+ |   |-- App.css
+ |   |-- CustomForm.css
+ |   |-- CustomInput.css
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Instalación
+
+Clona este repositorio e instala las dependencias:
+
+git clone <repo-url>
+cd <project-folder>
+npm install
+
+Uso
+
+Para iniciar la aplicación en modo desarrollo:
+
+npm run dev
+
+Explicación de Componentes
+
+CustomForm.tsx
+
+Este componente es el formulario principal. Utiliza useForm de react-hook-form con zodResolver para manejar la validación de datos.
+
+CustomInput.tsx
+
+Un componente reutilizable para manejar inputs del formulario, usando Controller de react-hook-form.
+
+form.model.ts
+
+Define la interfaz FormValues y el esquema de validación utilizando zod.
+
+Funcionalidades
+
+Validación en tiempo real con zod
+
+Manejo de errores en los inputs
+
+Envío de datos a la consola tras la validación exitosa
+
+Contribución
+
+Si deseas contribuir, crea un fork del proyecto, realiza tus cambios y abre un pull request.
+
+Licencia
+
+MIT
+
