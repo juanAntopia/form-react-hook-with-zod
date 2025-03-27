@@ -65,6 +65,10 @@ Manejo de errores en los inputs
 
 Envío de datos a la consola tras la validación exitosa
 
+Contribución
+
+Si deseas contribuir, crea un fork del proyecto, realiza tus cambios y abre un pull request.
+
 Licencia
 
 MIT
