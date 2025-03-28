@@ -6,7 +6,8 @@ import {schema, FormValues} from './models/form.model'
 
 export const CustomForm = () => {
     const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schema),
+        mode: 'onBlur'
     })
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
